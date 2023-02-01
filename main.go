@@ -1,9 +1,8 @@
 package main
 
 import (
+	c "alura_golang_oop/contas"
 	"fmt"
-
-	c "github.com/rafaellimasnp/alura_golang_oop/tree/main/contas"
 )
 
 func main() {
