@@ -1,7 +1,6 @@
 package main
 
 import (
-	"curso-golang-alura-oop/Contas",
 	"fmt"
 )
 
