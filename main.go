@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	c "https://github.com/rafaellimasnp/curso-golang-alura-oop"
+	c "github.com/rafaellimasnp/alura_golang_oop/tree/main/contas"
 )
 
 func main() {
