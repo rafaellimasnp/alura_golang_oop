@@ -1,4 +1,4 @@
-package Contas
+package contas
 
 type ContaCorrente struct {
 	titular       string
