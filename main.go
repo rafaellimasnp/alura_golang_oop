@@ -1,19 +1,32 @@
 package main
 
 import (
-	"alura_golang_oop/clientes"
-	c "alura_golang_oop/contas"
+	"clientes/contas"
 	"fmt"
 )
 
+func PagarBoleto(conta verificarConta, valorDoBOleto float64) {
+
+	conta.Sacar(valorDoBOleto)
+
+}
+
+type verificarConta interface {
+	Sacar(valor float64) string
+}
+
 func main() {
-	contaRafael := c.ContaCorrente{Titular: clientes.Titular{Nome: "Rafael",
-		CPF:       "0258789",
-		Profissao: "Programador"}, NumeroAgencia: 123132, NumeroConta: 1221}
 
-	contaRafael.Depositar(1000)
+	contaDoDenis := contas.ContaPoupanca{}
+	contaDaPati := contas.ContaCorrente{}
 
-	fmt.Println(contaRafael)
-	fmt.Println(contaRafael.ObterSaldo())
+	contaDoDenis.Depositar(100)
+	PagarBoleto(&contaDoDenis, 60)
+
+	contaDaPati.Depositar(500)
+	PagarBoleto(&contaDaPati, 400)
+
+	fmt.Println(contaDoDenis)
+	fmt.Println(contaDaPati)
 
 }

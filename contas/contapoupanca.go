@@ -1,16 +1,14 @@
 package contas
 
-import (
-	t "alura_golang_oop/clientes"
-)
+import t "alura_golang_oop/clientes"
 
-type ContaCorrente struct {
-	Titular                    t.Titular
-	NumeroAgencia, NumeroConta int
-	saldo                      float64
+type ContaPoupanca struct {
+	Titular                              t.Titular
+	NumeroAgencia, NumeroConta, Operacao int
+	saldo                                float64
 }
 
-func (c *ContaCorrente) Sacar(valorSaque float64) string {
+func (c *ContaPoupanca) Sacar(valorSaque float64) string {
 	podeSacar := valorSaque > 0 && valorSaque <= c.saldo
 
 	if podeSacar {
@@ -25,11 +23,11 @@ func (c *ContaCorrente) Sacar(valorSaque float64) string {
 
 }
 
-func (c *ContaCorrente) ObterSaldo() float64 {
+func (c *ContaPoupanca) ObterSaldo() float64 {
 	return c.saldo
 }
 
-func (c *ContaCorrente) Depositar(valorDeposito float64) (string, float64) {
+func (c *ContaPoupanca) Depositar(valorDeposito float64) (string, float64) {
 	if valorDeposito > 0 {
 		c.saldo += valorDeposito
 		return "Deposito realizado com sucesso", c.saldo
@@ -38,7 +36,7 @@ func (c *ContaCorrente) Depositar(valorDeposito float64) (string, float64) {
 	}
 }
 
-func (c *ContaCorrente) Transferir(valorTransferencia float64, contaDestino *ContaCorrente) bool {
+func (c *ContaPoupanca) Transferir(valorTransferencia float64, contaDestino *ContaPoupanca) bool {
 
 	if valorTransferencia < c.saldo && valorTransferencia > 0 {
 		c.saldo -= valorTransferencia
