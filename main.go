@@ -1,19 +1,24 @@
 package main
 
 import (
+	"alura_golang_oop/clientes"
 	c "alura_golang_oop/contas"
 	"fmt"
 )
 
 func main() {
-	contaRafael := c.ContaCorrente{"Rafael Lima", 1189, 1234, 1000}
-	contaMitali := c.ContaCorrente{"MItali", 1189, 1234, 1000}
+	contaRafael := c.ContaCorrente{Titular: clientes.Titular{Nome: "Rafael",
+		CPF:       "0258789",
+		Profissao: "Programador"}, NumeroAgencia: 123132, NumeroConta: 1221, Saldo: 1000}
 
-	status := contaRafael.Transferir(300, &contaMitali)
+	clienteMitali := clientes.Titular{"Mitali", "028875564", "Fisioterapeuta"}
+
+	contaMitali := c.ContaCorrente{clienteMitali, 12313, 1222, 1000}
 
 	fmt.Println(contaRafael)
-	fmt.Println(contaMitali)
 
-	fmt.Println(status)
+	fmt.Println("\n")
+
+	fmt.Println(contaMitali)
 
 }
