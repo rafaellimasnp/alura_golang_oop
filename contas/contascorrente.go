@@ -1,7 +1,7 @@
 package contascorrente
 
 type ContaCorrente struct {
-	Titular       string
+	Titular       Titular
 	NumeroAgencia int
 	NumeroConta   int
 	Saldo         float64
