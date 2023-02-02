@@ -1,3 +1,3 @@
-module alura_golang_oop/clientes
+module clientes
 
 go 1.19
