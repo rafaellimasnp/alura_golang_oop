@@ -1,3 +1,3 @@
-module github.com/rafaellimasnp/alura_golang_oop/tree/main/contas
+module alura_golang_oop/clientes
 
 go 1.19
